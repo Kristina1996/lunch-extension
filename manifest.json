@@ -1,0 +1,18 @@
+{
+	"manifest_version": 2,
+	"name": "Lunch Extension",
+	"description": "Генератор сообщения для заказа завтра с Вкусно33.рф",
+	"version": "1.0.0",
+	"browser_action": {
+		"default_popup": "page.html"
+	},
+	"content_scripts": [
+    {
+        "matches": [ "http://www.xn--33-dlc6apgtp.xn--p1ai/*" ],
+        "js": [ "script.js" ],
+        "css": [ "style.css" ],
+        "run_at": "document_start"
+    }
+],
+	"permissions": ["activeTab"]
+}
