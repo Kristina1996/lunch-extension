@@ -1,11 +1,58 @@
 document.addEventListener('DOMContentLoaded', function() {
-	var greeting = 'Guten morgen.' + '\n';
+	var greeting = '';
+	var newGreeting = [
+		{"language":"Азербайджанский","greeting":"Салам алейкум"},
+		{"language":"Английский","greeting":"Hello"},
+		{"language":"Арабский","greeting":"(Египет)\tAhlan wa sahlan"},
+		{"language":"Арабский","greeting":"(Восток, Северная Африка)\tMarhaba"},
+		{"language":"Африкаанс","greeting":"Hola"},
+		{"language":"Белорусский","greeting":"Прывитанне"},
+		{"language":"Болгарский","greeting":"Здравейте"},
+		{"language":"Венгерский","greeting":"Jo napot"},
+		{"language":"Вьетнамский","greeting":"Chao"},
+		{"language":"Гавайский","greeting":"Aloha"},
+		{"language":"Голландский","greeting":"Hallo"},
+		{"language":"Греческий","greeting":"Geia sou"},
+		{"language":"Грузинский","greeting":"Гамарджоба"},
+		{"language":"Иврит","greeting":"Shalom"},
+		{"language":"Индонезийский","greeting":"Selamat"},
+		{"language":"Исландский","greeting":"Godan daginn"},
+		{"language":"Испанский","greeting":"Buenas dias"},
+		{"language":"Итальянский","greeting":"Buon giorno"},
+		{"language":"Латинский","greeting":"Ave"},
+		{"language":"Латышский","greeting":"Lab dien, sveiki"},
+		{"language":"Литовский","greeting":"Sveikas"},
+		{"language":"Немецкий","greeting":"Guten Tag"},
+		{"language":"Норвежский","greeting":"Goddag"},
+		{"language":"Польский","greeting":"Dzien dobry"},
+		{"language":"Португальский","greeting":"Ola"},
+		{"language":"Румынский","greeting":"Buna"},
+		{"language":"Сербский","greeting":"Здраво"},
+		{"language":"Словацкий","greeting":"Dobry den"},
+		{"language":"Тайский","greeting":"Sawatdi"},
+		{"language":"Турецкий","greeting":"Merhaba"},
+		{"language":"Узбекский","greeting":"Салам алейкум"},
+		{"language":"Украинский","greeting":"Привіт"},
+		{"language":"Финский","greeting":"Paivaa"},
+		{"language":"Французский","greeting":"Bonjour"},
+		{"language":"Хинди","greeting":"Namaste"},
+		{"language":"Хорватский","greeting":"Zdravo"},
+		{"language":"Чешский","greeting":"Dobry den"},
+		{"language":"Шведский","greeting":"God dag"},
+		{"language":"Эсперанто","greeting":"Saluton"},
+		{"language":"Эстонский","greeting":"Tervist"},
+		{"language":"Японский","greeting":"Konnichi wa"}
+	];
+
+
 	var positions = '';
 	var buttons = document.getElementsByClassName('product__button');
 	console.log(typeof buttons);
 	
 	let div = document.createElement('div');
 	div.className = "order-lunch";
+	var randomLanguage = newGreeting[Math.floor(Math.random() * newGreeting.length)];
+	greeting = randomLanguage.greeting + " " + "(" + randomLanguage.language + ").";
 	div.innerHTML = "<strong>Текст сообщения:</strong><br>" + greeting + positions;
 	div.style.position = 'fixed';
 	div.style.top = '100px';
@@ -51,14 +98,5 @@ document.addEventListener('DOMContentLoaded', function() {
 			li.innerHTML = title;
 			ul.appendChild(li);
 		});
-		/*
-		el.addEventListener('click', function(e) {
-			var title = e.target.parentNode.parentNode.parentNode.getElementsByClassName('thumbnail-caption')[0].innerHTML;
-			positions = positions + '– ' + title + '\n';		
-			let li = document.createElement('li');
-			li.innerHTML = title;
-			ul.appendChild(li);	
-		});
-		*/
 	});
 });
